@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aplicacion Web para subir y publicar fotos de los lugares que has visitado a tu perfil, con la opcion de poder darle like.">
+    <meta name="author" content="Hakeem Ortiz">
+    <meta name="keywords" content="red social, fotos, paisajes, like, viajes, aplicacion">
+    <title>Around the U.S.</title>
+    <link rel="stylesheet" href="pages/index.css">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+  </head>
+  <body class="background">
+    <div class="page">
+      <header class="header">
+        <img src="./images/Logo.svg" alt="Logotipo de aplicación Around the U.S." class="header__logo">
+      </header>
+      <main class="content">
+        <section class="profile">
+          <img src="./images/Hakeem_Ortiz_profilePicture.avif" alt="Foto de perfil del usuario Hakeem Ortiz" class="profile__image">
+          <div class="profile__info">
+            <div class="profile__info-group">
+              <h1 class="profile__name">Hakeem Ortiz</h1>
+              <img src="./images/Edit_Button.svg" alt="Icono para editar la información del perfil" class="profile__edit-button">
+            </div>
+            <p class="profile__description">Aspirante a Desarrollador Web</p>
+          </div>
+          <div class="profile__add-button">
+            <img src="./images/Add_Icon.svg" alt="Icono para agregar elementos a la galería" class="profile__add-button-icon">
+          </div>
+          <div class="popup">
+            <div class="popup__container">
+              <h2 class="popup__title">Editar Perfil</h2>
+              <input type="text" placeholder="Nombre" class="popup__input">
+              <input type="text" placeholder="Acerca de mí" class="popup__input">
+              <button type="submit" class="popup__submit-button">Guardar</button>
+              <img src="./images/Close_Icon.svg" alt="Icono para cerrar la ventana emergente" class="popup__close-button">
+            </div>
+          </div>
+        </section>
+        <section class="elements">
+          <article class="element">
+            <img src="./images/Valle_de_Yosemite.avif" alt="Paisaje del río rodeado de árboles en el Valle de Yosemite" class="element__image">
+            <div class="element__info">
+              <p class="element__name">Valle de Yosemite</p>
+              <div class="element__like-group">
+                <img src="./images/Like_Icon.svg" alt="Icono para dar like a la publicación" class="element__like-icon element__like-icon_not-liked">
+                <img src="./images/Liked_Icon.svg" alt="Icono donde ya tiene like la publicación" class="element__like-icon element__like-icon_liked">
+              </div>
+            </div>
+          </article>
+          <article class="element">
+            <img src="./images/Lago_Louise.avif" alt="Paisaje del lago y las montañas del Lago Louise" class="element__image">
+            <div class="element__info">
+              <p class="element__name">Lago Louise</p>
+              <div class="element__like-group">
+                <img src="./images/Like_Icon.svg" alt="Icono para dar like a la publicación" class="element__like-icon element__like-icon_not-liked">
+                <img src="./images/Liked_Icon.svg" alt="Icono donde ya tiene like la publicación" class="element__like-icon element__like-icon_liked">
+              </div>
+            </div>
+          </article>
+          <article class="element">
+            <img src="./images/Montanas_Calvas.avif" alt="Paisaje de un atardecer sobre las Montanas Calvas" class="element__image">
+            <div class="element__info">
+              <p class="element__name">Montañas Calvas</p>
+              <div class="element__like-group">
+                <img src="./images/Like_Icon.svg" alt="Icono para dar like a la publicación" class="element__like-icon element__like-icon_not-liked">
+                <img src="./images/Liked_Icon.svg" alt="Icono donde ya tiene like la publicación" class="element__like-icon element__like-icon_liked">
+              </div>
+            </div>
+          </article>
+          <article class="element">
+            <img src="./images/Latemar.avif" alt="Paisaje de las montañas y un cielo estrellado en Latemar" class="element__image">
+            <div class="element__info">
+              <p class="element__name">Latemar</p>
+              <div class="element__like-group">
+                <img src="./images/Like_Icon.svg" alt="Icono para dar like a la publicación" class="element__like-icon element__like-icon_not-liked">
+                <img src="./images/Liked_Icon.svg" alt="Icono donde ya tiene like la publicación" class="element__like-icon element__like-icon_liked">
+              </div>
+            </div>
+          </article>
+          <article class="element">
+            <img src="./images/Vanois_National_Park.avif" alt="Paisaje del lago y las montañas en el Parque Nacional Vanois" class="element__image">
+            <div class="element__info">
+              <p class="element__name">Vanois National Park</p>
+              <div class="element__like-group">
+                <img src="./images/Like_Icon.svg" alt="Icono para dar like a la publicación" class="element__like-icon element__like-icon_not-liked">
+                <img src="./images/Liked_Icon.svg" alt="Icono donde ya tiene like la publicación" class="element__like-icon element__like-icon_liked">
+              </div>
+            </div>
+          </article>
+          <article class="element">
+            <img src="./images/Lago_di_Braies.avif" alt="Paisaje del puerto y botes en el Lago di Braies" class="element__image">
+            <div class="element__info">
+              <p class="element__name">Lago di Braies</p>
+              <div class="element__like-group">
+                <img src="./images/Like_Icon.svg" alt="Icono para dar like a la publicación" class="element__like-icon element__like-icon_not-liked">
+                <img src="./images/Liked_Icon.svg" alt="Icono donde ya tiene like la publicación" class="element__like-icon element__like-icon_liked">
+              </div>
+            </div>
+          </article>
+        </section>
+      </main>
+      <footer class="footer">
+        <p class="footer__copyright">&#169; 2025 Around The U.S.</p>
+      </footer>
+    </div>
+  </body>
+</html>
