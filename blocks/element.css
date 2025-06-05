@@ -1,0 +1,44 @@
+.element {
+  background-color: #fff;
+  border-radius: 10px;
+  color: #000;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.element__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px 10px 0 0;
+}
+
+.element__info {
+  margin: 25px 15px 31px 21px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.element__name {
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.element__like-icon {
+  display: block;
+  cursor: pointer;
+}
+
+.element__like-icon_liked {
+  display: none;
+}
+
+.element__like-icon_not-liked:hover {
+  opacity: .5;
+}
