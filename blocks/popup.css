@@ -10,6 +10,10 @@
   background-color: #0008;
 }
 
+.popup_open{
+  display: flex;
+}
+
 .popup__container {
   position: relative;
   padding: 34px 36px 0;
@@ -58,6 +62,17 @@
 
 .popup__submit-button:hover {
   opacity: .8;
+}
+
+.popup__submit-button_disabled {
+  background-color: transparent;
+  border: 1px solid #C4C4C4;
+  color: #C4C4C4;
+  cursor: default;
+}
+
+.popup__submit-button_disabled:hover {
+  opacity: 1;
 }
 
 .popup__close-button {
