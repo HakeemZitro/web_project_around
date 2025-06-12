@@ -28,83 +28,48 @@
           <div class="profile__add-button">
             <img src="./images/Add_Icon.svg" alt="Icono para agregar elementos a la galería" class="profile__add-button-icon">
           </div>
-          <div class="popup">
-            <form class="popup__container">
-              <h2 class="popup__title">Editar Perfil</h2>
-              <input type="text" placeholder="Nombre" class="popup__input popup__input_type_name">
-              <input type="text" placeholder="Acerca de mí" class="popup__input popup__input_type_description">
-              <button type="submit" class="popup__submit-button">Guardar</button>
-              <img src="./images/Close_Icon.svg" alt="Icono para cerrar la ventana emergente" class="popup__close-button">
-            </form>
-          </div>
         </section>
         <section class="elements">
-          <article class="element">
-            <img src="./images/Valle_de_Yosemite.avif" alt="Paisaje del río rodeado de árboles en el Valle de Yosemite" class="element__image">
-            <div class="element__info">
-              <p class="element__name">Valle de Yosemite</p>
-              <div class="element__like-group">
-                <img src="./images/Like_Icon.svg" alt="Icono para dar like a la publicación" class="element__like-icon element__like-icon_not-liked">
-                <img src="./images/Liked_Icon.svg" alt="Icono donde ya tiene like la publicación" class="element__like-icon element__like-icon_liked">
-              </div>
-            </div>
-          </article>
-          <article class="element">
-            <img src="./images/Lago_Louise.avif" alt="Paisaje del lago y las montañas del Lago Louise" class="element__image">
-            <div class="element__info">
-              <p class="element__name">Lago Louise</p>
-              <div class="element__like-group">
-                <img src="./images/Like_Icon.svg" alt="Icono para dar like a la publicación" class="element__like-icon element__like-icon_not-liked">
-                <img src="./images/Liked_Icon.svg" alt="Icono donde ya tiene like la publicación" class="element__like-icon element__like-icon_liked">
-              </div>
-            </div>
-          </article>
-          <article class="element">
-            <img src="./images/Montanas_Calvas.avif" alt="Paisaje de un atardecer sobre las Montanas Calvas" class="element__image">
-            <div class="element__info">
-              <p class="element__name">Montañas Calvas</p>
-              <div class="element__like-group">
-                <img src="./images/Like_Icon.svg" alt="Icono para dar like a la publicación" class="element__like-icon element__like-icon_not-liked">
-                <img src="./images/Liked_Icon.svg" alt="Icono donde ya tiene like la publicación" class="element__like-icon element__like-icon_liked">
-              </div>
-            </div>
-          </article>
-          <article class="element">
-            <img src="./images/Latemar.avif" alt="Paisaje de las montañas y un cielo estrellado en Latemar" class="element__image">
-            <div class="element__info">
-              <p class="element__name">Latemar</p>
-              <div class="element__like-group">
-                <img src="./images/Like_Icon.svg" alt="Icono para dar like a la publicación" class="element__like-icon element__like-icon_not-liked">
-                <img src="./images/Liked_Icon.svg" alt="Icono donde ya tiene like la publicación" class="element__like-icon element__like-icon_liked">
-              </div>
-            </div>
-          </article>
-          <article class="element">
-            <img src="./images/Vanois_National_Park.avif" alt="Paisaje del lago y las montañas en el Parque Nacional Vanois" class="element__image">
-            <div class="element__info">
-              <p class="element__name">Vanois National Park</p>
-              <div class="element__like-group">
-                <img src="./images/Like_Icon.svg" alt="Icono para dar like a la publicación" class="element__like-icon element__like-icon_not-liked">
-                <img src="./images/Liked_Icon.svg" alt="Icono donde ya tiene like la publicación" class="element__like-icon element__like-icon_liked">
-              </div>
-            </div>
-          </article>
-          <article class="element">
-            <img src="./images/Lago_di_Braies.avif" alt="Paisaje del puerto y botes en el Lago di Braies" class="element__image">
-            <div class="element__info">
-              <p class="element__name">Lago di Braies</p>
-              <div class="element__like-group">
-                <img src="./images/Like_Icon.svg" alt="Icono para dar like a la publicación" class="element__like-icon element__like-icon_not-liked">
-                <img src="./images/Liked_Icon.svg" alt="Icono donde ya tiene like la publicación" class="element__like-icon element__like-icon_liked">
-              </div>
-            </div>
-          </article>
         </section>
       </main>
       <footer class="footer">
         <p class="footer__copyright">&#169; 2025 Around The U.S.</p>
       </footer>
     </div>
+    <!-- VENTANAS EMERGENTES -->
+    <div class="popup" id="popup-edit-info">
+      <form class="popup__container">
+        <h2 class="popup__title">Editar Perfil</h2>
+        <input type="text" placeholder="Nombre" class="popup__input popup__input_type_name">
+        <input type="text" placeholder="Acerca de mí" class="popup__input popup__input_type_description">
+        <button type="submit" class="popup__submit-button">Guardar</button>
+        <img src="./images/Close_Icon.svg" alt="Icono para cerrar la ventana emergente" class="popup__close-button">
+      </form>
+    </div>
+    <div class="popup" id="popup-add-post">
+      <form class="popup__container">
+        <h2 class="popup__title">Nuevo Lugar</h2>
+        <input type="text" placeholder="Título" class="popup__input popup__input_type_name">
+        <input type="text" placeholder="Enlace a la imagen" class="popup__input popup__input_type_description">
+        <button type="submit" class="popup__submit-button">Crear</button>
+        <img src="./images/Close_Icon.svg" alt="Icono para cerrar la ventana emergente" class="popup__close-button">
+      </form>
+    </div>
+    <!-- PLANTILLAS -->
+    <template id="element-template">
+      <article class="element">
+        <img src="" alt="" class="element__image">
+        <img src="" alt="" class="element__trash">
+        <div class="element__info">
+          <p class="element__name"></p>
+          <div class="element__like-group">
+            <img src="./images/Like_Icon.svg" alt="Icono para dar like" class="element__like-icon element__like-icon_not-liked">
+            <img src="./images/Liked_Icon.svg" alt="Icono donde ya tiene like" class="element__like-icon element__like-icon_liked">
+          </div>
+        </div>
+      </article>
+    </template>
+    <!-- SCRIPT -->
     <script src="./scripts/index.js"></script>
   </body>
 </html>
