@@ -17,6 +17,13 @@
   display: flex;
 }
 
+.popup__image-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .popup__container {
   position: relative;
   padding: 34px 36px 0;
@@ -79,6 +86,16 @@
   opacity: 1;
 }
 
+.popup__image {
+  max-width: 75vw;
+  max-height: 75vh;
+}
+
+.popup__image-title {
+  font-size: 12px;
+  color: #fff;
+}
+
 .popup__close-button {
   position: absolute;
   top: -38px;
@@ -91,6 +108,7 @@
   opacity: .6;
 }
 
+
 @media screen and (max-width: 544px) {
   .popup__container {
     margin: 0 19px;
@@ -102,5 +120,10 @@
     width: 20px;
     top: -38px;
     right: 0;
+  }
+
+  .popup__close-button_image {
+    top: -23px;
+    right: -23px;
   }
 }

@@ -17,6 +17,15 @@ initialCards.forEach(function (post) {
   postElement.querySelector(".element__image").src = post.link;
   postElement.querySelector(".element__image").alt = `Fotografía de ${post.name}`;
 
+  // FULL IMAGE POSTS AGREGADOS //
+  postElement.querySelector(".element__image").addEventListener("click", () => {
+    fullImagePhoto.src = post.link;
+    fullImagePhoto.alt = `Fotografía de ${post.name}`;
+    fullImageTitle.textContent = post.name;
+
+    openPopup(popupFullImage);
+  })
+
   // LIKE PARA POSTS INICIALES //
   postElement.querySelector(".element__like").addEventListener("click", (evt) => {
     evt.target.classList.toggle("element__like_active");
@@ -49,6 +58,12 @@ const editInfoNameInput = popupEditInfo.querySelector(".popup__input_type_name")
 const editInfoDescriptionInput = popupEditInfo.querySelector(".popup__input_type_description");
 const editInfoSave = popupEditInfo.querySelector(".popup__submit-button");
 
+const popupFullImage = document.querySelector("#popup-full-image");
+const fullImageContainer = popupFullImage.querySelector(".popup__image-container");
+const fullImagePhoto = popupFullImage.querySelector(".popup__image");
+const fullImageTitle = popupFullImage.querySelector(".popup__image-title");
+const fullImageClose = popupFullImage.querySelector(".popup__close-button");
+
 
 // --- ABRE VENTANA EMERGENTE --- //
 function openPopup(popup, name, description, sendButton) {
@@ -65,6 +80,10 @@ function openPopup(popup, name, description, sendButton) {
   if(popup === popupAddPost) {
     name.value = "";
     description.value = "";
+  }
+
+  if(popup === popupFullImage) {
+    return;
   }
 
   renderPopup(name, description, sendButton);
@@ -106,6 +125,15 @@ function sendPopup(evt, popup, name, description) {
     postElement.querySelector(".element__image").src = description.value;
     postElement.querySelector(".element__image").alt = `Fotografía de ${name.value}`;
 
+    // FULL IMAGE POSTS AGREGADOS //
+    postElement.querySelector(".element__image").addEventListener("click", () => {
+      fullImagePhoto.src = description.value;
+      fullImagePhoto.alt = `Fotografía de ${name.value}`;
+      fullImageTitle.textContent = name.value;
+
+      openPopup(popupFullImage);
+    })
+
     // LIKE PARA POSTS AGREGADOS //
     postElement.querySelector(".element__like").addEventListener("click", (evt) => {
       evt.target.classList.toggle("element__like_active");
@@ -119,13 +147,12 @@ function sendPopup(evt, popup, name, description) {
     postsContainer.prepend(postElement);
   }
 
-  console.log(initialCards);
-  closeInfo(popup);
+  closePopup(popup);
 }
 
 
 // --- CIERRA VENTANA EMERGENTE --- //
-function closeInfo(popup) {
+function closePopup(popup) {
   popup.classList.remove("popup_open");
 }
 
@@ -136,113 +163,15 @@ function closeInfo(popup) {
 editInfoOpen.addEventListener("click", () => openPopup(popupEditInfo, editInfoNameInput, editInfoDescriptionInput, editInfoSave));
 editInfoNameInput.addEventListener("input", () => renderPopup(editInfoNameInput, editInfoDescriptionInput, editInfoSave));
 editInfoDescriptionInput.addEventListener("input", () => renderPopup(editInfoNameInput, editInfoDescriptionInput, editInfoSave));
-editInfoClose.addEventListener("click", () => closeInfo(popupEditInfo));
+editInfoClose.addEventListener("click", () => closePopup(popupEditInfo));
 editInfoForm.addEventListener("submit", (evt) => sendPopup(evt, popupEditInfo, editInfoNameInput, editInfoDescriptionInput));
 
 // --- EVENTOS AGREGAR POST --- //
 addPostOpen.addEventListener("click", () => openPopup(popupAddPost, addPostTitleInput, addPostLinkInput, addPostSave));
 addPostTitleInput.addEventListener("input", () => renderPopup(addPostTitleInput, addPostLinkInput, addPostSave));
 addPostLinkInput.addEventListener("input", () => renderPopup(addPostTitleInput, addPostLinkInput, addPostSave));
-addPostClose.addEventListener("click", () => closeInfo(popupAddPost));
+addPostClose.addEventListener("click", () => closePopup(popupAddPost));
 addPostForm.addEventListener("submit", (evt) => sendPopup(evt, popupAddPost, addPostTitleInput, addPostLinkInput));
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-// --- ABRE VENTANA EMERGENTE --- //
-addPostOpen.addEventListener("click", function () {
-  popupAddPost.classList.add("popup_open");
-});
-
-// --- RENDER DE INPUTS PARA BOTON CARGAR --- //
-
-
-
-// --- CIERRA VENTANA EMERGENTE --- //
-addPostClose.addEventListener("click", function () {
-  popupAddPost.classList.remove("popup_open");
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// EDITANDO INFORMACIÓN DE PERFIL
-const editInfoButton = document.querySelector(".profile__edit-button");
-const likeButton = document.querySelectorAll(".element__like-icon");
-const popupEditInfo = document.querySelector("#popup-edit-info");
-const popupSaveButton = document.querySelector(".popup__submit-button");
-const popupCloseButton = document.querySelector(".popup__close-button"); //Actualizar las variables a nombres similares a popupAddPost y los querys selector a su elemento popupEditinfo
-const profileForm = document.querySelector(".popup__container")
-const profileName = document.querySelector(".profile__name");
-const profileDescription = document.querySelector(".profile__description");
-const inputName = popupEditInfo.querySelector(".popup__input_type_name");
-const inputDescription = popupEditInfo.querySelector(".popup__input_type_description");
-
-
-function openPopup(popup, name, description) {
-  popup.classList.add("popup_open");
-
-  if(popup == popupEditInfo) {
-    name.value = profileName.textContent;
-    description.value = profileDescription.textContent;
-  }
-
-  renderInfo();
-}
-
-function renderInfo() {
-  if ((inputName.value == "") || (inputDescription.value == "")) {
-    popupSaveButton.classList.add("popup__submit-button_disabled"); //Cambiar las variables por argumentos
-    popupSaveButton.disabled = true;
-  }
-  else {
-    popupSaveButton.classList.remove("popup__submit-button_disabled");
-    popupSaveButton.disabled = false;
-  }
-}
-
-function saveInfo(evt) {
-  evt.preventDefault();
-  profileName.textContent = inputName.value;
-  profileDescription.textContent = inputDescription.value; //Crear sentencias if para cuando es popupEditInfo y popupAddPost
-  closeInfo();
-}
-
-function closeInfo(popup) {
-  popup.classList.remove("popup_open");
-}
-
-
-editInfoButton.addEventListener("click", () => openPopup(popupEditInfo, inputName, inputDescription));
-addPostOpen.addEventListener("click", () => openPopup(popupAddPost));
-popupCloseButton.addEventListener("click", () => closeInfo(popupEditInfo));
-addPostClose.addEventListener("click", () => closeInfo(popupAddPost));
-
-inputName.addEventListener("input", renderInfo);
-inputDescription.addEventListener("input", renderInfo); //Actualizar las funciones
-profileForm.addEventListener("submit", saveInfo);
-
-*/
+// --- EVENTOS FULL IMAGE --- //
+fullImageClose.addEventListener("click", () => closePopup(popupFullImage));

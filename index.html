@@ -40,8 +40,8 @@
     <div class="popup" id="popup-edit-info">
       <form class="popup__container">
         <h2 class="popup__title">Editar Perfil</h2>
-        <input type="text" placeholder="Nombre" class="popup__input popup__input_type_name">
-        <input type="text" placeholder="Acerca de mí" class="popup__input popup__input_type_description">
+        <input type="text" placeholder="Nombre" class="popup__input popup__input_type_name" minlength="3">
+        <input type="text" placeholder="Acerca de mí" class="popup__input popup__input_type_description" minlength="5">
         <button type="submit" class="popup__submit-button">Guardar</button>
         <img src="./images/Close_Icon.svg" alt="Icono para cerrar la ventana emergente" class="popup__close-button">
       </form>
@@ -49,11 +49,18 @@
     <div class="popup" id="popup-add-post">
       <form class="popup__container">
         <h2 class="popup__title">Nuevo Lugar</h2>
-        <input type="text" placeholder="Título" class="popup__input popup__input_type_name">
-        <input type="text" placeholder="Enlace a la imagen" class="popup__input popup__input_type_description">
+        <input type="text" placeholder="Título" class="popup__input popup__input_type_name" minlength="3">
+        <input type="text" placeholder="Enlace a la imagen" class="popup__input popup__input_type_description" minlength="5">
         <button type="submit" class="popup__submit-button">Crear</button>
         <img src="./images/Close_Icon.svg" alt="Icono para cerrar la ventana emergente" class="popup__close-button">
       </form>
+    </div>
+    <div class="popup" id="popup-full-image">
+      <div class="popup__image-container">
+        <img src="" alt="" class="popup__image">
+        <h2 class="popup__image-title"></h2>
+        <img src="./images/Close_Icon.svg" alt="Icono para cerrar la ventana emergente" class="popup__close-button popup__close-button_image">
+      </div>
     </div>
     <!-- PLANTILLAS -->
     <template id="element-template">
