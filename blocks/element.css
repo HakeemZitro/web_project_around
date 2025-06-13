@@ -23,10 +23,12 @@
   width: 18px;
   height: 19.3px;
   cursor: pointer;
+  transition: .3s;
 }
 
 .element__trash:hover {
   opacity: .6;
+  transform: scale(1.3);
 }
 
 .element__info {
@@ -44,15 +46,22 @@
   overflow: hidden;
 }
 
-.element__like-icon {
+.element__like {
+  padding: 0;
   display: block;
+  min-width: 21px;
+  height: 19px;
+  background: url("../images/Like_Icon.svg");
+  border: none;
   cursor: pointer;
+  transition: .3s;
 }
 
-.element__like-icon_liked {
-  display: none;
-}
-
-.element__like-icon_not-liked:hover {
+.element__like:hover {
   opacity: .5;
+  transform: scale(1.3);
+}
+
+.element__like_active {
+  background: url("../images/Liked_Icon.svg");
 }

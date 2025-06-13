@@ -17,6 +17,16 @@ initialCards.forEach(function (post) {
   postElement.querySelector(".element__image").src = post.link;
   postElement.querySelector(".element__image").alt = `Fotografía de ${post.name}`;
 
+  // LIKE PARA POSTS INICIALES //
+  postElement.querySelector(".element__like").addEventListener("click", (evt) => {
+    evt.target.classList.toggle("element__like_active");
+  });
+
+  // ELIMINA POSTS INICIALES //
+  postElement.querySelector(".element__trash").addEventListener("click", () => {
+    postElement.remove();
+  });
+
   postsContainer.append(postElement);
 });
 
@@ -88,13 +98,29 @@ function sendPopup(evt, popup, name, description) {
   }
 
   if(popup === popupAddPost) {
+    postElement.name = name.value;
+    postElement.link = description.value;
+    initialCards.unshift(postElement)
+
     postElement.querySelector(".element__name").textContent = name.value;
     postElement.querySelector(".element__image").src = description.value;
     postElement.querySelector(".element__image").alt = `Fotografía de ${name.value}`;
+
+    // LIKE PARA POSTS AGREGADOS //
+    postElement.querySelector(".element__like").addEventListener("click", (evt) => {
+      evt.target.classList.toggle("element__like_active");
+    });
+
+    // ELIMINA POSTS AGREGADOS //
+    postElement.querySelector(".element__trash").addEventListener("click", () => {
+      postElement.remove();
+    });
+
     postsContainer.prepend(postElement);
   }
 
-    closeInfo(popup);
+  console.log(initialCards);
+  closeInfo(popup);
 }
 
 
