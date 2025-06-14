@@ -1,6 +1,6 @@
-# Tripleten web_project_around
+# Proyecto 8: Aplicación Web Around the U.S.
 
-Página Web para la red social de Around the U.S., donde podrás subir tus fotos favoritas, editar tu perfil y dar like a las publicaciones de tus fotos. La página utiliza HTML, CSS y JavaScript.
+Aplicación Web para la red social de Around the U.S., donde podrás subir tus fotos favoritas, editar tu perfil y dar like a las publicaciones de tus fotos. La página utiliza HTML, CSS y JavaScript.
 
 
 ## Características del proyecto
@@ -14,10 +14,18 @@ Página Web para la red social de Around the U.S., donde podrás subir tus fotos
 - Pseudo-clases y Pseudo-elementos
 - Diseño Responsive
 - Condicionales
-- Eventos
+- Eventos de Interacción
 - Modificación del DOM
 
 
-## Visita la Página Web
+## Visita la Aplicación Web
 
 https://hakeemzitro.github.io/web_project_around/
+
+
+## Vista Previa de la Aplicación Web
+
+![Página Principal](./images/project_screenshots/Initial_Page.avif)
+![Agregando una Publicación](./images/project_screenshots/Adding_Post.avif)
+![Dando Like a Publicaciones](./images/project_screenshots/Post_Liked.avif)
+![Información de Perfil Actualizada y Publicaciones Eliminadas](./images/project_screenshots/Post_Deleted.avif)
