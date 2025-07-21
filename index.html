@@ -38,20 +38,32 @@
     </div>
     <!-- VENTANAS EMERGENTES -->
     <div class="popup" id="popup-edit-info">
-      <form class="popup__container">
+      <form class="popup__form">
         <h2 class="popup__title">Editar Perfil</h2>
-        <input type="text" placeholder="Nombre" class="popup__input popup__input_type_name" minlength="3">
-        <input type="text" placeholder="Acerca de mí" class="popup__input popup__input_type_description" minlength="5">
-        <button type="submit" class="popup__submit-button">Guardar</button>
+        <label class="popup__field">
+          <input type="text" placeholder="Nombre" id="name-input" class="popup__input popup__input_type_name" minlength="2" maxlength="40" required>
+          <span class="popup__error name-input-error"></span>
+        </label>
+        <label class="popup__field">
+          <input type="text" placeholder="Acerca de mí" id="description-input" class="popup__input popup__input_type_description" minlength="2" maxlength="200" required>
+          <span class="popup__error description-input-error"></span>
+        </label>
+        <button type="submit" class="popup__button">Guardar</button>
         <img src="./images/Close_Icon.svg" alt="Icono para cerrar la ventana emergente" class="popup__close-button">
       </form>
     </div>
     <div class="popup" id="popup-add-post">
-      <form class="popup__container">
+      <form class="popup__form">
         <h2 class="popup__title">Nuevo Lugar</h2>
-        <input type="text" placeholder="Título" class="popup__input popup__input_type_name" minlength="3">
-        <input type="text" placeholder="Enlace a la imagen" class="popup__input popup__input_type_description" minlength="5">
-        <button type="submit" class="popup__submit-button">Crear</button>
+        <label class="popup__field">
+          <input type="text" placeholder="Título" id="title-input" class="popup__input popup__input_type_name" minlength="2" maxlength="30" required>
+          <span class="popup__error title-input-error"></span>
+        </label>
+        <label class="popup__field">
+          <input type="url" placeholder="Enlace a la imagen" id="link-input" class="popup__input popup__input_type_description" required>
+          <span class="popup__error link-input-error"></span>
+        </label>
+        <button type="submit" class="popup__button">Crear</button>
         <img src="./images/Close_Icon.svg" alt="Icono para cerrar la ventana emergente" class="popup__close-button">
       </form>
     </div>
@@ -75,5 +87,6 @@
     </template>
     <!-- SCRIPT -->
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validate.js"></script>
   </body>
 </html>
