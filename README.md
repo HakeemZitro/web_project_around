@@ -1,4 +1,4 @@
-# Proyecto 8: Aplicación Web Around the U.S.
+# Proyecto 10: Aplicación Web Around the U.S.
 
 Aplicación Web para la red social de Around the U.S., donde podrás subir tus fotos favoritas, editar tu perfil y dar like a las publicaciones de tus fotos. La página utiliza HTML, CSS y JavaScript.
 
@@ -16,6 +16,8 @@ Aplicación Web para la red social de Around the U.S., donde podrás subir tus f
 - Condicionales
 - Eventos de Interacción
 - Modificación del DOM
+- Paradigma POO
+- Encapsulación
 
 
 ## Visita la Aplicación Web
