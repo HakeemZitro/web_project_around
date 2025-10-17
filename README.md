@@ -1,4 +1,4 @@
-# Proyecto 10: Aplicación Web Around the U.S.
+# Tripleten web_project_around (Project 11)
 
 Aplicación Web para la red social de Around the U.S., donde podrás subir tus fotos favoritas, editar tu perfil y dar like a las publicaciones de tus fotos. La página utiliza HTML, CSS y JavaScript.
 
@@ -17,7 +17,8 @@ Aplicación Web para la red social de Around the U.S., donde podrás subir tus f
 - Eventos de Interacción
 - Modificación del DOM
 - Paradigma POO
-- Encapsulación
+- Encapsulación, Herencia y Polimorfismo
+- Uso de Clases y Acoplamiento débil
 
 
 ## Visita la Aplicación Web
