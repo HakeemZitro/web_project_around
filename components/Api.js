@@ -30,7 +30,7 @@ export default class Api {
     .catch(err => console.log(`Error al cargar las tarjetas: ${err}`));
   }
 
-  // ----- Obtener información del usuario y tarjetas iniciales simultáneamente ----- //
+  // ----- Obtiene toda la informacion inicial de la aplicacion simultáneamente ----- //
   getAppInfo() {
       return Promise.all([this.getUserInfo(), this.getInitialCards()]);
   }
