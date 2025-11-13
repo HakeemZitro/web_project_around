@@ -15,5 +15,10 @@ const configFormValidation = {
   inputErrorClass: "popup__input_type_error",
   errorClass: "popup__error_visible"
 };
+const serverBaseUrl = "https://around-api.es.tripleten-services.com/v1";
+const serverRequestHeaders = {
+    authorization: "c56e30dc-2883-4270-a59e-b2f7bae969c6",
+    "Content-Type": "application/json"
+  }
 
-export { initialCards, configFormValidation };
+export { initialCards, configFormValidation, serverBaseUrl, serverRequestHeaders };

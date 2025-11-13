@@ -5,7 +5,7 @@ import PopupWithForm from "../components/PopupWithForm.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import FormValidator from "../components/FormValidator.js";
 import UserInfo from "../components/UserInfo.js";
-import { initialCards, configFormValidation } from "../utils/constants.js";
+import { initialCards, configFormValidation, serverBaseUrl, serverRequestHeaders } from "../utils/constants.js";
 
 
 
