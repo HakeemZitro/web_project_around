@@ -17,7 +17,7 @@ const configFormValidation = {
 };
 const serverBaseUrl = "https://around-api.es.tripleten-services.com/v1";
 const serverRequestHeaders = {
-    authorization: "c56e30dc-2883-4270-a59e-b2f7bae969c6",
+    authorization: "b4b4617b-f69c-4e5f-b01f-69dbca101938",
     "Content-Type": "application/json"
   }
 

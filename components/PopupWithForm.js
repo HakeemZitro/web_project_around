@@ -10,14 +10,14 @@ export default class PopupWithForm extends Popup {
     const popupFormValues = {
       name: this._popup.querySelector(".popup__input_type_name").value,
       link: this._popup.querySelector(".popup__input_type_description").value,
-      description: this._popup.querySelector(".popup__input_type_description").value
+      about: this._popup.querySelector(".popup__input_type_description").value
     };
     return popupFormValues;
   }
 
-  setInputValues({name, description}) {
+  setInputValues({name, about}) {
     this._popup.querySelector(".popup__input_type_name").value = name;
-    this._popup.querySelector(".popup__input_type_description").value = description;
+    this._popup.querySelector(".popup__input_type_description").value = about;
   }
 
   setEventListeners() {
