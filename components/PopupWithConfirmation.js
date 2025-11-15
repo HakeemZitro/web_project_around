@@ -5,6 +5,8 @@ export default class PopupWithConfirmation extends Popup {
     super(popupSelector);
     this._handleConfirmationSubmit = handleConfirmationSubmit;
 
+    this._submitButton = this._popup.querySelector(".popup__button");
+    this._initialButtonText = this._submitButton.textContent;
   }
 
   setEventListeners() {
@@ -13,6 +15,14 @@ export default class PopupWithConfirmation extends Popup {
       e.preventDefault();
       this._handleConfirmationSubmit(this._postData);
     });
+  }
+
+  renderLoading(isLoading, loadingText) {
+    if (isLoading) {
+      this._submitButton.textContent = loadingText;
+    } else {
+      this._submitButton.textContent = this._initialButtonText;
+    }
   }
 
   open(postData) {

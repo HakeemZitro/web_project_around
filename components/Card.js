@@ -56,6 +56,7 @@ export default class Card {
     this._setEventListeners();
 
     this._element.querySelector(".element__name").textContent = this._name;
+    this._element.querySelector(".element__name").title = this._name;
     this._element.querySelector(".element__image").src = this._link;
     this.toggleLikeButton({ isLiked: this._isLiked });
 

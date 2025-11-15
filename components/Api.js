@@ -18,7 +18,6 @@ export default class Api {
       headers: this._headers
     })
     .then(res => this._checkResponse(res))
-    .catch(err => console.log(`Error al cargar la información del usuario: ${err}`));
   }
 
   // ----- Metodo para cargar los posts iniciales (GET) ----- //
@@ -27,7 +26,6 @@ export default class Api {
       headers: this._headers
     })
     .then(res => this._checkResponse(res))
-    .catch(err => console.log(`Error al cargar las tarjetas: ${err}`));
   }
 
   // ----- Obtiene toda la informacion inicial de la aplicacion simultáneamente ----- //
@@ -46,7 +44,6 @@ export default class Api {
       })
     })
     .then(res => this._checkResponse(res))
-    .catch(err => console.log(`Error al editar el perfil: ${err}`));
   }
 
   // ----- Metodo para agregar un nuevo post (POST) ----- //
@@ -60,7 +57,6 @@ export default class Api {
       })
     })
     .then(res => this._checkResponse(res))
-    .catch(err => console.log(`Error al agregar la tarjeta: ${err}`));
   }
 
   // ----- Metodo para eliminar un post (DELETE) ----- //
@@ -70,7 +66,6 @@ export default class Api {
       headers: this._headers
     })
     .then(res => this._checkResponse(res))
-    .catch(err => console.log(`Error al eliminar la tarjeta ${cardId}: ${err}`));
   }
 
   // ----- Metodo para añadir "me gusta" (PUT) ----- //
@@ -80,7 +75,6 @@ export default class Api {
       headers: this._headers
     })
     .then(res => this._checkResponse(res))
-    .catch(err => console.log(`Error al dar like a la tarjeta ${cardId}: ${err}`));
   }
 
   // ----- Metodo para eliminar "me gusta" (DELETE) ----- //
@@ -90,7 +84,6 @@ export default class Api {
       headers: this._headers
     })
     .then(res => this._checkResponse(res))
-    .catch(err => console.log(`Error al quitar like a la tarjeta ${cardId}: ${err}`));
   }
 
   // ----- Metodo para actualizar la foto de perfil (PATCH) ----- //
@@ -103,7 +96,6 @@ export default class Api {
       })
     })
     .then(res => this._checkResponse(res))
-    .catch(err => console.log(`Error al actualizar el avatar: ${err}`));
   }
 
 }

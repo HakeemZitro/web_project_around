@@ -39,7 +39,7 @@ api.getAppInfo()
             .catch(err => console.log(`Error con el like del post ${item.cardId}: Error ${err}`));
         },
         function handleDeleteClick(postInstance) {
-          popupDeleteCard.open(postInstance);
+          popupDeletePost.open(postInstance);
         }
       );
       const postElement = post.generateCard();
@@ -48,9 +48,7 @@ api.getAppInfo()
     );
     postsList.renderItems();
   })
-  .catch(err => {
-    console.log(`Error al inicializar la aplicación: ${err}`);
-});
+  .catch(err => console.log(`Error al cargar la información inicial: ${err}`));
 
 
 // ----- Genera las instancias de los validadores de formularios ----- //
@@ -68,12 +66,14 @@ editAvatarValidator.enableValidation();
 // Popup editar info
 const popupEditInfo = new PopupWithForm("#popup-edit-info",
   function handleFormSubmit(info) {
+    popupEditInfo.renderLoading(true, "Guardando...");
     api.editProfile(info)
       .then((updatedInfo) => {
         profileInfo.setUserInfo(updatedInfo);
         popupEditInfo.close();
       })
-      .catch(err => console.log(`Error al actualizar la información de perfil: Error ${err}`));
+      .catch(err => console.log(`Error al actualizar la información de perfil: Error ${err}`))
+      .finally(() => popupEditInfo.renderLoading(false));
   }
 );
 popupEditInfo.setEventListeners();
@@ -85,12 +85,14 @@ document.querySelector(".profile__edit-button").addEventListener("click", () => 
 
 const popupEditAvatar = new PopupWithForm("#popup-profile-picture",
   function handleFormSubmit(info) {
+    popupEditAvatar.renderLoading(true, "Guardando...");
     api.updateAvatar(info)
       .then((updatedAvatar) => {
         profileInfo.setUserInfo(updatedAvatar);
         popupEditAvatar.close();
       })
-      .catch(err => console.log(`Error al actualizar la foto de perfil: Error ${err}`));
+      .catch(err => console.log(`Error al actualizar la foto de perfil: Error ${err}`))
+      .finally(() => popupEditAvatar.renderLoading(false));
   }
 )
 popupEditAvatar.setEventListeners();
@@ -103,28 +105,31 @@ document.querySelector(".profile__edit-image").addEventListener("click", () => {
 // Popup agregar post
 const popupAddPost = new PopupWithForm("#popup-add-post",
   function handleFormSubmit(item) {
+    popupAddPost.renderLoading(true, "Creando...");
     api.addCard(item)
-      .then((newPostInfo) => {
-        const newPost = new Card(newPostInfo, "#element-template",
-    function handleCardClick(item) {
-      popupFullImage.open(item);
-    },
-    function handleLikeClick(item) {
-      const apiRequest = item.isLiked ? api.removeLike(item.cardId) : api.addLike(item.cardId);
-      apiRequest
-        .then(postUpdated => {
-          newPost.toggleLikeButton(postUpdated);
-        })
-        .catch(err => console.log(`Error con el like del post ${item.cardId}: Error ${err}`));
-    },
-    function handleDeleteClick(postInstance) {
-      popupDeleteCard.open(postInstance);
-    }
-    );
-    const newPostElement = newPost.generateCard();
-    postsList.addNewItem(newPostElement);
-    popupAddPost.close();
-  })
+    .then((newPostInfo) => {
+      const newPost = new Card(newPostInfo, "#element-template",
+      function handleCardClick(item) {
+        popupFullImage.open(item);
+      },
+      function handleLikeClick(item) {
+        const apiRequest = item.isLiked ? api.removeLike(item.cardId) : api.addLike(item.cardId);
+        apiRequest
+          .then(postUpdated => {
+            newPost.toggleLikeButton(postUpdated);
+          })
+          .catch(err => console.log(`Error con el like del post ${item.cardId}: Error ${err}`));
+      },
+      function handleDeleteClick(postInstance) {
+        popupDeletePost.open(postInstance);
+      }
+      );
+      const newPostElement = newPost.generateCard();
+      postsList.addNewItem(newPostElement);
+      popupAddPost.close();
+    })
+    .catch(err => console.log(`Error al crear nueva tarjeta: Error ${err}`))
+    .finally(() => popupAddPost.renderLoading(false));
 });
 popupAddPost.setEventListeners();
 document.querySelector(".profile__add-button").addEventListener("click", () => {
@@ -133,17 +138,18 @@ document.querySelector(".profile__add-button").addEventListener("click", () => {
 });
 
 // Popup confirmar eliminación
-const popupDeleteCard = new PopupWithConfirmation("#popup-delete-post",
+const popupDeletePost = new PopupWithConfirmation("#popup-delete-post",
   function handleConfirmationSubmit(post) {
+    popupDeletePost.renderLoading(true, "Eliminando...");
     api.deleteCard(post._id)
       .then(() => {
         post.removeCardElement();
-        popupDeleteCard.close();
+        popupDeletePost.close();
       })
       .catch(err => `Error con la eliminación del post ${cardId}: Erorr ${err}`)
-  }
-);
-popupDeleteCard.setEventListeners();
+      .finally(() => popupDeletePost.renderLoading(false));
+});
+popupDeletePost.setEventListeners();
 
 // Popup imagen completa
 const popupFullImage = new PopupWithImage("#popup-full-image");
