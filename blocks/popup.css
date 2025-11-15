@@ -26,11 +26,11 @@
 
 .popup__form {
   position: relative;
-  padding: 34px 36px 0;
+  padding: 34px 36px 36px;
   display: flex;
   flex-direction: column;
   width: 430px;
-  height: 330px;
+  height: fit-content;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 0 25px #00000026;
@@ -38,7 +38,6 @@
 }
 
 .popup__title {
-  margin-bottom: 44px;
   font-size: 24px;
   font-weight: 900;
   line-height: 1;
@@ -85,10 +84,15 @@
 
 .popup__field:last-of-type {
   margin-top: 34px;
+  margin-bottom: 10px;
+}
+
+.popup__field:first-of-type {
+  margin-top: 44px;
 }
 
 .popup__button {
-  margin-top: 48px;
+  margin-top: 38px;
   padding: 16px 0;
   font-size: 18px;
   border: none;
@@ -140,7 +144,6 @@
   .popup__form {
     margin: 0 19px;
     padding: 25px 22px;
-    height: 322px;
   }
 
   .popup__close-button {

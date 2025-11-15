@@ -17,13 +17,16 @@
       </header>
       <main class="content">
         <section class="profile">
-          <img src="./images/Hakeem_Ortiz_profilePicture.avif" alt="Foto de perfil del usuario Hakeem Ortiz" class="profile__image">
+          <div class="profile__image-box">
+            <img src="" alt="" class="profile__image">
+            <div class="profile__edit-image"></div>
+          </div>
           <div class="profile__info">
             <div class="profile__info-group">
-              <h1 class="profile__name">Hakeem Ortiz</h1>
+              <h1 class="profile__name"></h1>
               <img src="./images/Edit_Button.svg" alt="Icono para editar la información del perfil" class="profile__edit-button">
             </div>
-            <p class="profile__description">Aspirante a Desarrollador Web</p>
+            <p class="profile__description"></p>
           </div>
           <div class="profile__add-button">
             <img src="./images/Add_Icon.svg" alt="Icono para agregar elementos a la galería" class="profile__add-button-icon">
@@ -52,6 +55,17 @@
         <img src="./images/Close_Icon.svg" alt="Icono para cerrar la ventana emergente" class="popup__close-button">
       </form>
     </div>
+    <div class="popup" id="popup-profile-picture" name="edit-profile-picture">
+      <form class="popup__form">
+        <h2 class="popup__title">Cambiar Foto de Perfil</h2>
+        <label class="popup__field">
+          <input type="url" placeholder="Enlace a la imagen" id="profile-picture-input" class="popup__input popup__input_type_description" required>
+          <span class="popup__error profile-picture-input-error"></span>
+        </label>
+        <button type="submit" class="popup__button">Guardar</button>
+        <img src="./images/Close_Icon.svg" alt="Icono para cerrar la ventana emergente" class="popup__close-button">
+      </form>
+    </div>
     <div class="popup" id="popup-add-post" name="add-post">
       <form class="popup__form">
         <h2 class="popup__title">Nuevo Lugar</h2>
@@ -73,6 +87,13 @@
         <h2 class="popup__image-title"></h2>
         <img src="./images/Close_Icon.svg" alt="Icono para cerrar la ventana emergente" class="popup__close-button popup__close-button_image">
       </div>
+    </div>
+    <div class="popup" id="popup-delete-post" name="delete-post">
+      <form class="popup__form">
+        <h2 class="popup__title">¿Estás seguro?</h2>
+        <button type="submit" class="popup__button">Si</button>
+        <img src="./images/Close_Icon.svg" alt="Icono para cerrar la ventana emergente" class="popup__close-button">
+      </form>
     </div>
     <!-- PLANTILLAS -->
     <template id="element-template">
