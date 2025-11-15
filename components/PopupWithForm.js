@@ -7,17 +7,31 @@ export default class PopupWithForm extends Popup {
   }
 
   _getInputValues() {
-    const popupFormValues = {
+    var popupFormValues
+    if (this._popup.querySelector(".popup__input_type_name")) {
+      popupFormValues = {
       name: this._popup.querySelector(".popup__input_type_name").value,
       link: this._popup.querySelector(".popup__input_type_description").value,
-      about: this._popup.querySelector(".popup__input_type_description").value
+      about: this._popup.querySelector(".popup__input_type_description").value,
+      avatar: this._popup.querySelector(".popup__input_type_description").value
     };
+    } else {
+      popupFormValues = {
+      link: this._popup.querySelector(".popup__input_type_description").value,
+      about: this._popup.querySelector(".popup__input_type_description").value,
+      avatar: this._popup.querySelector(".popup__input_type_description").value
+      };
+    }
     return popupFormValues;
   }
 
-  setInputValues({name, about}) {
-    this._popup.querySelector(".popup__input_type_name").value = name;
-    this._popup.querySelector(".popup__input_type_description").value = about;
+  setInputValues(type, {name, about, avatar}) {
+    if(type === "Profile Info") {
+      this._popup.querySelector(".popup__input_type_name").value = name;
+      this._popup.querySelector(".popup__input_type_description").value = about;
+    } else {
+      this._popup.querySelector("#profile-picture-input").value = avatar;
+    }
   }
 
   setEventListeners() {
@@ -25,7 +39,6 @@ export default class PopupWithForm extends Popup {
     this._popup.querySelector(".popup__form").addEventListener("submit", (evt) => {
       evt.preventDefault();
       this._handleFormSubmit(this._getInputValues());
-      this.close();
     });
   }
 

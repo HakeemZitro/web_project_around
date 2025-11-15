@@ -94,12 +94,12 @@ export default class Api {
   }
 
   // ----- Metodo para actualizar la foto de perfil (PATCH) ----- //
-  updateAvatar(link) {
+  updateAvatar({ avatar }) {
     return fetch(`${this._baseUrl}/users/me/avatar`, {
       method: 'PATCH',
       headers: this._headers,
       body: JSON.stringify({
-        avatar: link
+        avatar: avatar
       })
     })
     .then(res => this._checkResponse(res))

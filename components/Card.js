@@ -1,11 +1,10 @@
 export default class Card {
-  constructor ({ name, link, isLiked, _id, owner }, cardSelector, handleCardClick, handleLikeClick, handleDeleteClick, userId) {
+  constructor ({ name, link, isLiked, _id, owner }, cardSelector, handleCardClick, handleLikeClick, handleDeleteClick) {
     this._name = name;
     this._link = link;
     this._isLiked = isLiked;
     this._id = _id;
     this._ownerId = owner;
-    this._userId = userId;
 
     this._cardSelector = document.querySelector(cardSelector);
 
@@ -15,7 +14,9 @@ export default class Card {
   }
 
   toggleLikeButton({ isLiked }) {
-    if(isLiked) {
+    this._isLiked = isLiked;
+
+    if(this._isLiked) {
       this._element.querySelector(".element__like").classList.add("element__like_active");
     } else {
       this._element.querySelector(".element__like").classList.remove("element__like_active");
